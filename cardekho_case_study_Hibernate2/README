@@ -1,0 +1,32 @@
+Adding maven dependencies in pom.xml to automatically add external jar files
+
+
+
+
+
+
+
+
+
+
+
+
+click on project==>>ctrl+n==>>In select wizard in filter text field type source folder ==>>next
+==>>named it as "src/main/resources" ==>> create general folder named "META-INF"  in 
+ "src/main/resources" ==>>create xml file named as "persistence.xml" in to "META-INF"
+ 
+persistence.xml==>>Maven Dependencies==>>javax.persistence-api-2.2.jar=>>
+javax.persistence==>>persistence_2_1.xsd or persistence_2_2.xsd ==>>
+copy line no 50-56 in persistence==>>remove "..." (3 dots)==>>add below tags.
+ 
+<persistence-unit name="">
+<properties>
+7 times====>> <property name="" value=""/> 
+(4 times property related about jdbc, 3times property related to hibernate)
+</properties>
+</persistence-unit>
+
+Tip: To write 5th property's value==>>Maven Dependencies==>>hibernate-core-5.6.15.Final.jar==>>
+==>>org.hibernate.dialect==>>open "MYSQL8Dialect.class"==>>right click on class name
+==>>copy qualified name ==>> copied qualified name is value for that 5th property
+& copied qualified name is==>>"org.hibernate.dialect.MySQL8Dialect"
